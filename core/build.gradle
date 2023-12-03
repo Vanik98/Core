@@ -1,11 +1,12 @@
 plugins {
     id 'com.android.library'
     id 'org.jetbrains.kotlin.android'
+    id 'maven-publish'
 }
 
 android {
     namespace 'com.core'
-    compileSdk 33
+    compileSdk 34
 
     defaultConfig {
         minSdk 24
@@ -29,8 +30,29 @@ android {
     }
 }
 
-dependencies {
+publishing {
+    publications {
+        bar(MavenPublication) {
+            groupId 'com.core'
+            artifactId 'core'
+            version '0.0.2'
+            artifact("$buildDir/outputs/aar/core-release.aar")
 
+        }
+    }
+
+    repositories {
+        maven {
+            url uri('https://maven.pkg.github.com/Vanik98/Core')
+            credentials {
+                username = 'Vanik98'
+                password = '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'
+            }
+        }
+    }
+}
+
+dependencies {
     implementation 'androidx.core:core-ktx:1.9.0'
     implementation 'androidx.appcompat:appcompat:1.6.1'
     implementation 'com.google.android.material:material:1.10.0'
