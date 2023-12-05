@@ -46,7 +46,7 @@ publishing {
             url uri('https://maven.pkg.github.com/Vanik98/Core')
             credentials {
                 username = 'Vanik98'
-                password = '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'
+                password = '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'
             }
         }
     }
