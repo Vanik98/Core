@@ -35,7 +35,7 @@ publishing {
         bar(MavenPublication) {
             groupId 'com.core'
             artifactId 'core'
-            version '0.0.2'
+            version '0.0.3'
             artifact("$buildDir/outputs/aar/core-release.aar")
 
         }
@@ -46,7 +46,7 @@ publishing {
             url uri('https://maven.pkg.github.com/Vanik98/Core')
             credentials {
                 username = 'Vanik98'
-                password = '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'
+                password = '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'
             }
         }
     }
