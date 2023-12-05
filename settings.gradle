@@ -10,9 +10,15 @@ dependencyResolutionManagement {
     repositories {
         google()
         mavenCentral()
+        maven {
+            url = uri('https://maven.pkg.github.com/Vanik98/Core')
+            credentials {
+                username = 'Vanik98'
+                password = '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'
+            }
+        }
     }
 }
-
 rootProject.name = "Core"
 include ':app'
 include ':core'
